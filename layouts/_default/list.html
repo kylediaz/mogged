@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <div class="index-content">
+        {{ .Content }}
+    </div>
+    {{ $pages := where .Pages "hidden" "!=" true }}
+    {{ range $pages.GroupByDate "2006" }}
+        {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+          <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+            {{ .Key }}
+          </h2>
+          <hr class="max-w-none border-double border-neutral-400" />
+        {{ end }}
+        <div class="divide-y divide-neutral-300 overflow-hidden dark:divide-neutral-600">
+          {{ range .Pages }}
+            {{ partial "article-link.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+{{ end }}

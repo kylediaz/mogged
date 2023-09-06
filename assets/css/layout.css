@@ -1,0 +1,116 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+.container {
+  max-width: 42em;
+  margin: 0 auto;
+}
+
+@media (max-width: 840px) {
+  .main-wrapper {
+    margin: 0;
+    max-width: none;
+    overflow-x: hidden;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    word-wrap: break-word;
+  }
+
+  .pagination-item {
+    padding: 0.5em 0.5em;
+    font-size: 14px;
+  }
+
+  .post-navigation {
+    background: var(--pagination-bg-color);
+    text-align: center;
+    padding: 0.5em 0;
+  }
+
+  .post-navigation a {
+    margin-left: 0.5em;
+  }
+
+  .post-pagination .pagination-item {
+    max-width: 10em;
+  }
+}
+
+/* Asides */
+
+.Aside--left {
+  width: 400px;
+  margin: 10px 40px 10px -240px;
+  float: left;
+}
+
+.Aside--right {
+  width: 160px;
+  margin: 10px 0 10px 40px;
+  float: right;
+}
+
+.Aside-media {
+  width: 400px;
+  max-width: none;
+}
+
+.Caption--aside {
+  width: 400px;
+}
+
+.Caption {
+  margin-bottom: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-grey3);
+  color: #767676;
+  color: var(--color-typo3);
+  font-size: 13px;
+}
+
+.Caption--aside {
+  width: 400px;
+}
+
+@media (max-width: 1040px) {
+  .Aside-media {
+    width: 100%;
+  }
+  .Caption--aside {
+    width: 100%;
+  }
+  .Aside--left,
+  .Aside--right {
+    width: 560px;
+    width: var(--size-s);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 0;
+    float: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .Aside--left,
+  .Aside--right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="header-top">
+</div>
+{{ if .Site.Menus.main }}
+    <nav>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+{{ else }}
+    <nav></nav>
+{{ end }}
+
+{{ if .Site.Params.mathjax }}{{ partial "mathjax-support.html" . }}{{ end }}

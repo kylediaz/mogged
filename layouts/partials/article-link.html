@@ -1,0 +1,20 @@
+<h3>
+  {{ with .Params.externalUrl }}
+    <a
+      href="{{ . }}"
+      target="_blank"
+      rel="external"
+      >
+      <span style="font-size: small; text-align: center; align-self: center; margin: right 0.1rem;">{{ $.Date.Format "Jan 2, 2006" }}</span>
+      {{ $.Title | emojify }}
+    </a>
+    <span title="{{ i18n "list.externalurl_title" }}">
+      &#8599;
+    </span>
+  {{ else }}
+    <a href="{{ .RelPermalink }}">
+      <span style="font-size: small; text-align: center; align-self: center; margin: right 0.1rem;">{{ $.Date.Format "Jan 2, 2006" }}</span>
+      {{ .Title | emojify }}
+    </a>
+  {{ end }}
+</h3>
