@@ -2,7 +2,7 @@
     <div class="index-content">
         {{ .Content }}
     </div>
-    {{ $pages := where .Pages "hidden" "!=" true }}
+    {{ $pages := where .Pages "Params.hidden" "!=" true }}
     {{ range $pages.GroupByDate "2006" }}
         {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
           <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">

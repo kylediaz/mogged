@@ -4,6 +4,7 @@
       href="{{ . }}"
       target="_blank"
       rel="external"
+      style=" color: black"
       >
       <span style="font-size: small; text-align: center; align-self: center; margin: right 0.1rem;">{{ $.Date.Format "Jan 2, 2006" }}</span>
       {{ $.Title | emojify }}
@@ -12,7 +13,7 @@
       &#8599;
     </span>
   {{ else }}
-    <a href="{{ .RelPermalink }}">
+    <a href="{{ .RelPermalink }}" style=" color: black">
       <span style="font-size: small; text-align: center; align-self: center; margin: right 0.1rem;">{{ $.Date.Format "Jan 2, 2006" }}</span>
       {{ .Title | emojify }}
     </a>

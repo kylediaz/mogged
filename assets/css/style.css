@@ -1,7 +1,6 @@
 * {
   font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
-  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -71,6 +70,7 @@ header nav a {
 
 header nav a:hover {
   background-color: yellow;
+  border-bottom: none;
 }
 
 header nav a:first-child {
@@ -97,7 +97,8 @@ h3 {
 /* Links */
 
 a {
-  color: var(--link-color);
+  color: #d0021b;
+  transition: color .2s;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
@@ -105,8 +106,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-  color: var(--link-state-color);
-  border-bottom: 1px solid var(--link-state-border-color);
+  border-bottom: 1px solid firebrick;
 }
 
 a:active,
@@ -116,29 +116,6 @@ a:hover {
 
 a:active {
   opacity: 0.9;
-}
-
-a.skip-main {
-  left: -999px;
-  position: absolute;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  z-index: -999;
-}
-
-a.skip-main:focus,
-a.skip-main:active {
-  left: auto;
-  top: 0px;
-  width: auto;
-  height: auto;
-  overflow: auto;
-  z-index: 999;
-  padding: 4px 6px 4px 6px;
-  text-decoration: underline;
-  border: none;
 }
 
 /* Code */
@@ -203,4 +180,8 @@ img, svg {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
+}
+
+.proj-title {
+  font-size: 1.3rem;
 }
