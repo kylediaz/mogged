@@ -1,0 +1,3 @@
+{{ $birthday := .Get "birthday" | time }}
+{{ $diff := now.Sub $birthday }}
+{{ math.Floor (div $diff.Hours 8760) }}
