@@ -1,0 +1,13 @@
+<div class="item-grid">
+{{ range $index, $item := . }}
+    {{ if mod $index 3 | eq 0 }}
+    <div class="row">
+    {{ end }}
+
+    {{ partial "grid-item.html" $item }}
+
+    {{ if mod (add $index 1) 3 | eq 0 }}
+    </div>
+    {{ end }}
+{{ end }}
+</div>
