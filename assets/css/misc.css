@@ -20,3 +20,8 @@ a.skip-main:active {
     text-decoration: underline;
     border: none;
 }
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}

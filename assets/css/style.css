@@ -1,15 +1,9 @@
-@import url('https://fonts.cdnfonts.com/css/liberation-sans');
-
 * {
   line-height: 1.5;
 }
 
 main {
   outline: none;
-}
-
-body  {
-  font-family: "Segoe UI", sans-serif;
 }
 
 /* Header */
@@ -131,10 +125,6 @@ kbd {
     font-size: 0.90rem;
     line-height: 154%;
     overflow-x: scroll;
-}
-
-code > *, pre > * {
-  font-family: 'Cascadia Code', monospace;
 }
 
 p code {

@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+thead {
+  font-weight: bolder;
+}
+
+tr th,
+tr td {
+  padding: 8px 16px;
+  border: 1px solid #f3f3f3;
+}
+
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+/* Scrollable Tables */
+
+.scrollable-table {
+  overflow-y: auto;
+  height: 200px;
+}
+.scrollable-table thead th {
+  position: sticky;
+  top: 0px;
+}

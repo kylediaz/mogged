@@ -22,6 +22,8 @@
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | absURL }}">
 <link rel="apple-touch-icon-precomposed" href="{{ "favicon.png" | absURL }}">
 
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/main.css") }}
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/fonts.css") }}
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/layout.css") }}
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/style.css") }}
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/misc.css") }}
