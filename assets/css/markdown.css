@@ -1,3 +1,110 @@
+article {
+  line-height: 1.6;
+}
+article > :first-child {
+  margin-top: 0;
+}
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-weight: normal;
+  line-height: 1;
+  margin-top: 1.5em;
+  margin-bottom: var(--padding-16);
+}
+
+article h1 a.anchor,
+article h2 a.anchor,
+article h3 a.anchor,
+article h4 a.anchor,
+article h5 a.anchor,
+article h6 a.anchor {
+  opacity: 0;
+  font-size: 0.75em;
+  vertical-align: middle;
+  text-decoration: none;
+}
+article h1:hover a.anchor,
+article h2:hover a.anchor,
+article h3:hover a.anchor,
+article h4:hover a.anchor,
+article h5:hover a.anchor,
+article h6:hover a.anchor,
+article h1 a.anchor:focus,
+article h2 a.anchor:focus,
+article h3 a.anchor:focus,
+article h4 a.anchor:focus,
+article h5 a.anchor:focus,
+article h6 a.anchor:focus {
+  opacity: initial;
+}
+article h4,
+article h5,
+article h6 {
+  font-weight: bolder;
+}
+article h5 {
+  font-size: 0.875em;
+}
+article h6 {
+  font-size: 0.75em;
+}
+article b,
+article optgroup,
+article strong {
+  font-weight: bolder;
+}
+article a {
+  text-decoration: none;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article a:visited {
+  color: var(--color-visited-link);
+}
+article img, article svg {
+  max-width: 100%;
+  min-width: 10%;
+  display: block;
+  height: auto;
+  margin: 0 auto 0.5em;
+}
+article code {
+  padding: 0 var(--padding-4);
+  background: var(--gray-200);
+  border-radius: var(--border-radius);
+  font-size: 0.875em;
+}
+article pre {
+  padding: var(--padding-16);
+  background: var(--gray-100);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+}
+article pre code {
+  padding: 0;
+  background: none;
+}
+article p {
+  word-wrap: break-word;
+}
+article blockquote {
+  margin: var(--padding-16) 0;
+  padding: var(--padding-8) var(--padding-16) var(--padding-8) var(--padding-16);
+  border-inline-start: var(--padding-4) solid var(--gray-200);
+  border-radius: var(--border-radius);
+}
+article blockquote :first-child {
+  margin-top: 0;
+}
+article blockquote :last-child {
+  margin-bottom: 0;
+}
+
 table {
   width: 100%;
   border-spacing: 0;
@@ -10,6 +117,10 @@ thead {
   font-weight: bolder;
 }
 
+thead tr {
+  background-color: var(--body-background);
+}
+
 tr th,
 tr td {
   padding: 8px 16px;
@@ -20,13 +131,23 @@ tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-/* Scrollable Tables */
-
-.scrollable-table {
-  overflow-y: auto;
-  height: 200px;
+details {
+  padding: var(--padding-16);
+  border: var(--padding-1) solid var(--gray-200);
+  border-radius: var(--border-radius);
 }
-.scrollable-table thead th {
-  position: sticky;
-  top: 0px;
+details summary {
+  line-height: 1;
+  padding: var(--padding-16);
+  margin: var(--padding-16);
+  cursor: pointer;
+}
+details[open] summary {
+  margin-bottom: 0;
+}
+figure {
+  margin: var(--padding-16) 0;
+}
+figure figcaption p {
+  margin-top: 0;
 }

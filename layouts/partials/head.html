@@ -22,11 +22,15 @@
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | absURL }}">
 <link rel="apple-touch-icon-precomposed" href="{{ "favicon.png" | absURL }}">
 
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/main.css") }}
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/fonts.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/layout.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/style.css") }}
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/variables.css") }}
+
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/main.css") }}
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/markdown.css") }}
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/interactables.css") }}
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/shortcodes.css") }}
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/misc.css") }}
+{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/highlight.css") }}
 
 {{ range .Site.Params.customCSS -}}
   {{ partial "resource.html" (dict "context" $ "type" "css" "filename" . ) }}

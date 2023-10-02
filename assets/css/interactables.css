@@ -1,0 +1,34 @@
+button {
+  display: inline-block;
+  background-color: var(--body-background);
+  font-size: var(--font-size-14);
+  color: var(--color-link);
+  line-height: var(--padding-16) * 2;
+  padding: 0 var(--padding-16);
+  border: var(--padding-1) solid var(--color-link);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: none;
+}
+button.info {
+    background-color: var(--hint-color-info);
+}
+button.warning {
+    background-color: var(--hint-color-warning);
+}
+button.danger {
+    background-color: var(--hint-color-danger);
+    color: var(--body-background);
+}
+button.green {
+    background-color: var(--color-green);
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: var(--border-radius);
+  border-style: solid;
+}
