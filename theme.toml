@@ -19,3 +19,20 @@ min_version = "0.41.0"
   name = ""
   homepage = ""
   repo = ""
+
+[markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "bw"
+    tabWidth = 4
+
+
+
+
