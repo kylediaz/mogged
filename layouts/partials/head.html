@@ -4,15 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>{{ if and (.Title) (not .IsHome) }}{{ .Title | markdownify }} - {{ end }}{{ .Site.Title | markdownify }}</title>
+{{ if .Params.seoTitle }}
+<title>{{ .Params.seoTitle }}</title>
+{{ else if .Params.Title}}
+<title>{{ .Params.Title }}</title>
+{{ else }}
+<title>{{ .Site.Title }}</title>
+{{ end }}
+
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
 
 {{ with .Keywords }}
     <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }},{{ end }}{{ $e }}{{ end }}">
-{{ end }}
-
-{{ if and (.IsPage) (eq .Params.hidden true)}}
-<meta name="robots" content="noindex" />
 {{ end }}
 
 {{ with .OutputFormats.Get "rss" -}}
