@@ -99,7 +99,41 @@ a.button:hover {
   background-color: var(--gray-100);
 }
 
-.book-hint .info {
-    border-color: var(--hint-color-info);
-    background-color: rgba(var(--hint-color-info), 0.1);
+.book-hint.info {
+  border-color: var(--hint-color-info);
+  background-color: rgba(52, 192, 255, 0.1);
+}
+
+/* tabs */
+
+.book-tabs {
+  margin-top: var(--padding-16);
+  margin-bottom: var(--padding-16);
+  border: var(--padding-1) solid var(--gray-200);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.book-tabs label {
+  display: inline-block;
+  padding: var(--padding-8) var(--padding-16);
+  border-bottom: var(--padding-1) transparent;
+  cursor: pointer;
+}
+.book-tabs .book-tabs-content {
+  order: 999;
+  width: 100%;
+  border-top: var(--padding-1) solid var(--gray-100);
+  padding: var(--padding-16);
+  display: none;
+}
+.book-tabs input[type="radio"]:checked + label {
+  border-bottom: var(--padding-1) solid var(--color-link);
+}
+.book-tabs input[type="radio"]:checked + label + .book-tabs-content {
+  display: block;
+}
+.book-tabs input[type="radio"]:focus + label {
+  border: var(--padding-1) solid var(--color-link);
 }
