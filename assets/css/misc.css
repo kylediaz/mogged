@@ -156,3 +156,10 @@ textarea.numbered {
   position: sticky;
   top: 0px;
 }
+
+.comment-section {
+  margin-top: var(--padding-16);
+  background-color: var(--gray-100);
+  padding: var(--padding-8) var(--padding-16) var(--padding-8) var(--padding-16);
+  border-radius: var(--border-radius);
+}
