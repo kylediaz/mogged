@@ -5,14 +5,15 @@
 <meta name="referrer" content="no-referrer-when-downgrade">
 
 {{ if .Params.seoTitle }}
-<title>{{ .Params.seoTitle }}</title>
+<title>{{ .Params.seoTitle }} - {{ .Site.Title }}</title>
 {{ else if .Params.Title}}
-<title>{{ .Params.Title }}</title>
+<title>{{ .Params.Title }} - {{ .Site.Title }}</title>
 {{ else }}
 <title>{{ .Site.Title }}</title>
 {{ end }}
 
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
+<link rel="canonical" href="{{ .Permalink }}" />
 
 {{ with .Keywords }}
     <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }},{{ end }}{{ $e }}{{ end }}">
@@ -25,15 +26,10 @@
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | absURL }}">
 <link rel="apple-touch-icon-precomposed" href="{{ "favicon.png" | absURL }}">
 
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/fonts.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/variables.css") }}
-
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/main.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/markdown.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/interactables.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/shortcodes.css") }}
-{{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/misc.css") }}
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/highlight.css") }}
+
+{{- $styles := resources.Get "css/entry.scss" | resources.ExecuteAsTemplate "css/entry.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
 {{ range .Site.Params.customCSS -}}
   {{ partial "resource.html" (dict "context" $ "type" "css" "filename" . ) }}

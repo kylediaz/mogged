@@ -1,0 +1,45 @@
+@import "variables";
+
+
+button {
+  display: inline-block;
+  background-color: $body-background;
+  font-size: $font-size-14;
+  color: $color-link;
+  line-height: $padding-16 * 2;
+  padding: 0 $padding-16;
+  border: $padding-1 solid $color-link;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: none;
+}
+button.info {
+    background-color: $hint-color-info;
+}
+button.warning {
+    background-color: $hint-color-warning;
+}
+button.danger {
+    background-color: $hint-color-danger;
+    color: $body-background;
+}
+button.green {
+    background-color: $color-green;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: $border-radius;
+  border-style: solid;
+}
+
+input.toggle {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+}

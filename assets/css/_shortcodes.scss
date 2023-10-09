@@ -1,3 +1,6 @@
+@import "variables";
+
+
 /* Asides */
 
 .Aside--left {
@@ -81,12 +84,12 @@
 /* button */
 a.button {
   display: inline-block;
-  font-size: var(--font-size-14);
-  color: var(--color-link);
-  line-height: var(--padding-16) * 2;
-  padding: 0 var(--padding-16);
-  border: var(--padding-1) solid var(--color-link);
-  border-radius: var(--border-radius);
+  font-size: $font-size-14;
+  color: $color-link;
+  line-height: $padding-16 * 2;
+  padding: 0 $padding-16;
+  border: $padding-1 solid $color-link;
+  border-radius: $border-radius;
   cursor: pointer;
 }
 a.button:hover {
@@ -95,47 +98,48 @@ a.button:hover {
 
 /* hint */
 .book-hint.none {
-  border-color: var(--gray-200);
-  background-color: var(--gray-100);
+  border-color: $gray-200;
+  background-color: $gray-100;
 }
 
 .book-hint.info {
-  border-color: var(--hint-color-info);
+  border-color: $hint-color-info;
   background-color: rgba(52, 192, 255, 0.1);
 }
 
 /* tabs */
 
 .book-tabs {
-  margin-top: var(--padding-16);
-  margin-bottom: var(--padding-16);
-  border: var(--padding-1) solid var(--gray-200);
-  border-radius: var(--border-radius);
+  margin-top: $padding-16;
+  margin-bottom: $padding-16;
+  border: $padding-1 solid $gray-200;
+  border-radius: $border-radius;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
 }
 .book-tabs label {
   display: inline-block;
-  padding: var(--padding-8) var(--padding-16);
-  border-bottom: var(--padding-1) transparent;
+  padding: $padding-8 $padding-16;
+  border-bottom: $padding-1 transparent;
   cursor: pointer;
 }
 .book-tabs .book-tabs-content {
   order: 999;
   width: 100%;
-  border-top: var(--padding-1) solid var(--gray-100);
-  padding: var(--padding-16);
+  border-top: $padding-1 solid $gray-100;
+  padding: $padding-16;
   display: none;
 }
 .book-tabs input[type="radio"]:checked + label {
-  border-bottom: var(--padding-1) solid var(--color-link);
+  border-bottom: $padding-1 solid $color-link;
 }
 .book-tabs input[type="radio"]:checked + label + .book-tabs-content {
   display: block;
 }
 .book-tabs input[type="radio"]:focus + label {
-  border: var(--padding-1) solid var(--color-link);
+  border: $padding-1 solid $color-link;
+  padding: ($padding-8 - 1rem / 32) ($padding-16 - 1rem / 16); // To account for change in border 
 }
 
 /* about */
@@ -148,11 +152,12 @@ a.button:hover {
 .about-image-container {
   flex: none;
   width: 12rem;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   border-right: 2px;
-  border-color: var(--gray-200);
+  border-color: $gray-200;
   padding-right: 16px;
 }
 
@@ -170,13 +175,16 @@ a.button:hover {
 
 .about-icons-container {
   display: flex;
-  flex-direction: row;
-  gap: var(--padding-16);
+  flex-direction: column;
+  gap: $padding-16;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-@media (min-width: var(--mobile-breakpoint)) {
+@media (max-width: $mobile-breakpoint) {
+  .about-image-container {
+    width: auto;
+  }
   .about-icons-container {
     flex-direction: row;
     margin-left: auto;

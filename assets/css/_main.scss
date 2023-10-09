@@ -1,16 +1,18 @@
+@import "variables";
+
 html {
-  font-size: var(--font-size-base);
+  font-size: $font-size-base;
   scroll-behavior: smooth;
   touch-action: manipulation;
 }
 
 body {
-  min-width: var(--body-min-width);
-  color: var(--body-font-color);
-  background: var(--body-background);
+  min-width: $body-min-width;
+  color: $body-font-color;
+  background: $body-background;
 
   letter-spacing: 0.33px;
-  font-weight: var(--body-font-weight);
+  font-weight: $body-font-weight;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,7 +30,7 @@ body * {
   margin-bottom: 5rem;
 }
 
-@media (max-width: var(--mobile-breakpoint)) {
+@media (max-width: $mobile-breakpoint) {
   .main-wrapper {
     margin: 0;
     max-width: none;
@@ -49,13 +51,13 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: var(--body-font-weight);
+  font-weight: $body-font-weight;
 }
 
 /* <a> */
 
 a {
-  color: var(--color-link);
+  color: $color-link;
   transition: color 0.2s;
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -68,7 +70,7 @@ a:hover {
 }
 
 a svg {
-  color: var(--body-font-color);
+  color: $body-font-color;
 }
 
 img,
