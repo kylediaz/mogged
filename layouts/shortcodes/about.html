@@ -1,0 +1,15 @@
+<div class="about-container">
+    <div class="about-image-container">
+        <img src="images/resume/me.png">
+    </div>
+    <div class="about-main-container">
+        <h1>{{.Site.Params.author}}</h1>
+        <div>{{ .Site.Params.professionalTitle }}</div>
+        <div>{{ .Site.Params.description }}</div>
+    </div>
+    <div class="about-icons-container">
+        {{ range .Site.Params.social }}
+            {{ partial "icon.html" . }}
+        {{ end }}
+    </div>
+</div>

@@ -137,3 +137,49 @@ a.button:hover {
 .book-tabs input[type="radio"]:focus + label {
   border: var(--padding-1) solid var(--color-link);
 }
+
+/* about */
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-image-container {
+  flex: none;
+  width: 12rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-right: 2px;
+  border-color: var(--gray-200);
+  padding-right: 16px;
+}
+
+.about-image-container img {
+  max-width: 100%;
+}
+
+.about-main-container {
+  flex-grow: 1 !important;
+}
+
+.about-main-container h1 {
+  border-bottom: 2px #767676;
+}
+
+.about-icons-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--padding-16);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (min-width: var(--mobile-breakpoint)) {
+  .about-icons-container {
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

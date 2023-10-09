@@ -1,0 +1,14 @@
+{{ $localCopy := resources.Get (print "icons/" .id ".svg") }}
+
+{{ if .url }} <a href="{{.url}}"> {{ end}}
+ 
+{{ if $localCopy }}
+    <span class="inline-svg" >
+    {{ $localCopy.Content | safeHTML }}
+    </span>
+{{ else }}
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/regular.min.js"></script>
+    <i class="fab fa-{{.id}}"></i>
+{{ end }}
+
+{{ if .url }} </a> {{ end}}

@@ -28,7 +28,7 @@ body * {
   margin-bottom: 5rem;
 }
 
-@media (max-width: var(--mobile-width)) {
+@media (max-width: var(--mobile-breakpoint)) {
   .main-wrapper {
     margin: 0;
     max-width: none;
@@ -65,6 +65,10 @@ a:active,
 a:hover {
   outline: 0;
   opacity: 0.7;
+}
+
+a svg {
+  color: var(--body-font-color);
 }
 
 img,
