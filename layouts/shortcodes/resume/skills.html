@@ -1,0 +1,7 @@
+<div class="skills">
+  {{ range .Site.Data.resume.skills }}
+  <a href="/tags/{{ . | lower }}">
+    <div class="skills-item">{{ . }}</div>
+  </a>
+  {{ end }}
+</div>

@@ -1,0 +1,36 @@
+{{ $icon := .Image }}
+{{ $isImage := or (strings.HasSuffix $icon ".png") (strings.HasSuffix $icon ".svg") }}
+
+<div class="experience {{ range .InformationLevels }}level-{{ . }} {{ end }}">
+    <a href="{{ .Website }}">
+    <span style="display:flex;align-items:left;">
+      {{ if $isImage }}
+        <img src="{{ $icon }}" alt="Icon" style="height:1.8em;margin:0;padding-right:.3em">
+      {{ else }}
+        <i class="{{ $icon }}" style="font-size:.8em;margin-right:0.25em;"></i>
+      {{ end }}
+      <h3 style="display:inline-block;margin:0;">{{ .Name }}</h3>
+    </span>
+    </a>
+  
+    <p class="level-3 level-4">{{ .Blurb | markdownify }}</p>
+    <p class="level-4">{{ .ExtendedBlurb | markdownify }}</p>
+  
+    {{ range .Roles }}
+      <p class="flex flex-space-between" style="font-weight: bold">
+        <span>{{ .Title }}</span>
+        <span>{{ (.Start | time.AsTime) | time.Format "Jan 2006" }} {{ with .End }}- {{ . | time.AsTime | time.Format "Jan 2006" }} {{ end }}</span>
+      </p>
+  
+      {{ with .BriefBlurb }}<p class="level-1">{{ . | markdownify }}</p>{{ end }}
+      {{ with .Blurb }}<p class="level-2 level-3 level-4">{{ . | markdownify }}</p>{{ end }}
+      {{ with .ExtendedBlurb }}<p class="level-3 level-4">{{ . | markdownify }}</p>{{ end }}
+      {{ with .Bullets }}
+      <ul class="level-2 level-3 level-4">
+        {{ range . }}
+          <li>{{ . | markdownify }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    {{ end }}
+  </div>

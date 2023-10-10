@@ -157,19 +157,15 @@ a.button:hover {
 
   border-color: $gray-200;
   padding-right: $padding-16 * 2;
-}
 
-.about-image-container img {
-  max-width: 100%;
+  img {
+    max-width: 100%;
+  }
 }
 
 .about-main-container {
   flex-grow: 1 !important;
   width: 100%;
-}
-
-.about-main-container h1 {
-  border-bottom: 2px #767676;
 }
 
 .about-icons-container {
@@ -207,4 +203,23 @@ a.button:hover {
   input[type="radio"].level-#{$i}:checked ~ * > .level-#{$i} {
     display: block;
   }
+}
+
+// Resume
+
+// Skills
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills-item {
+  padding: $padding-8 / 2 $padding-16 * 2;
+  font-size: smaller;
+  border-radius: $border-radius;
+  background-color: $gray-100;
+  margin: $padding-8 $padding-16;
+  flex-grow: 1;
 }

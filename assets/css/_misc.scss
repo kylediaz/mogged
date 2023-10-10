@@ -96,37 +96,23 @@ nav#TableOfContents li {
 
 /* Grid Showcase */
 
-.showcase-item {
-  float: left;
-  box-sizing: border-box;
+.item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-@media (min-width: 750px) {
-  .showcase-item {
-    width: 30.6666666667%;
-    margin-left: 4%;
-  }
-  .showcase-item:first-child {
-    margin-left: 0;
-  }
+.showcase-item {
+  box-sizing: border-box;
+  width: $container-max-width / 6;
+  max-width: 100%;
 }
 
 .image-col {
   box-sizing: border-box;
   display: block;
   margin-bottom: $padding-16;
-}
-
-@media (min-width: 750px) {
-  .image-col {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 300px) {
-  .image-col {
-    width: 100%;
-  }
+  max-width: 100%;
 }
 
 /* Special Elements */
@@ -169,4 +155,8 @@ textarea.numbered {
     width: 100%;
     display: table;
   }
+}
+
+.experience {
+  margin-top: $padding-16*2;
 }
