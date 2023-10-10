@@ -146,19 +146,17 @@ a.button:hover {
 
 .about-container {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .about-image-container {
   flex: none;
-  width: 12rem;
+  width: $padding-16 * 12;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
-  border-right: 2px;
   border-color: $gray-200;
-  padding-right: 16px;
+  padding-right: $padding-16 * 2;
 }
 
 .about-image-container img {
@@ -167,6 +165,7 @@ a.button:hover {
 
 .about-main-container {
   flex-grow: 1 !important;
+  width: 100%;
 }
 
 .about-main-container h1 {
@@ -182,12 +181,30 @@ a.button:hover {
 }
 
 @media (max-width: $mobile-breakpoint) {
+  .about-container {
+    flex-direction: column;
+  }
   .about-image-container {
     width: auto;
+    padding-right: 0;
   }
   .about-icons-container {
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+// Control information level
+
+@for $i from 1 to 5 {
+  input[type="radio"].level-#{$i} ~ .level-#{$i},
+  input[type="radio"].level-#{$i} ~ * > .level-#{$i} {
+    display: none;
+  }
+
+  input[type="radio"].level-#{$i}:checked ~ .level-#{$i},
+  input[type="radio"].level-#{$i}:checked ~ * > .level-#{$i} {
+    display: block;
   }
 }
