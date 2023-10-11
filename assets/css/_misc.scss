@@ -152,6 +152,27 @@ nav#TableOfContents li {
   }
 }
 
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $padding-8;
+}
+
+.skills-item {
+  padding: $padding-8 / 2 $padding-16 * 2;
+  font-size: smaller;
+  border-radius: $border-radius;
+  background-color: $gray-100;
+  text-align: center;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .skills > * {
+    flex: 1 1;
+  }
+}
+
 /* Special Elements */
 
 textarea.numbered {

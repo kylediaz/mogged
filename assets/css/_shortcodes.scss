@@ -204,22 +204,3 @@ a.button:hover {
     display: block;
   }
 }
-
-// Resume
-
-// Skills
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.skills-item {
-  padding: $padding-8 / 2 $padding-16 * 2;
-  font-size: smaller;
-  border-radius: $border-radius;
-  background-color: $gray-100;
-  margin: $padding-8 $padding-16;
-  flex-grow: 1;
-}
