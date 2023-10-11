@@ -25,12 +25,16 @@
       {{ with .BriefBlurb }}<p class="level-1">{{ . | markdownify }}</p>{{ end }}
       {{ with .Blurb }}<p class="level-2 level-3 level-4">{{ . | markdownify }}</p>{{ end }}
       {{ with .ExtendedBlurb }}<p class="level-3 level-4">{{ . | markdownify }}</p>{{ end }}
-      {{ with .Bullets }}
+
+      {{ if or .Bullets .ExtendedBullets }}
       <ul class="level-2 level-3 level-4">
-        {{ range . }}
-          <li>{{ . | markdownify }}</li>
+        {{ range .Bullets }}
+          <li class="level-2 level-3 level-4">{{ . | markdownify }}</li>
+        {{ end }}
+        {{ range .ExtendedBullets }}
+          <li class="level-3 level-4">{{ . | markdownify }}</li>
         {{ end }}
       </ul>
-      {{ end }}
+      {{ end}}
     {{ end }}
   </div>

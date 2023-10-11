@@ -193,14 +193,18 @@ a.button:hover {
 
 // Control information level
 
-@for $i from 1 to 5 {
-  input[type="radio"].level-#{$i} ~ .level-#{$i},
-  input[type="radio"].level-#{$i} ~ * > .level-#{$i} {
-    display: none;
+$max-levels: 5;
+
+@for $i from 1 to $max-levels {
+  @for $j from 1 to $max-levels {
+    input[type="radio"]#level-#{$i} ~ .level-#{$j},
+    input[type="radio"]#level-#{$i} ~ * > .level-#{$j} {
+      display: none;
+    }
   }
 
-  input[type="radio"].level-#{$i}:checked ~ .level-#{$i},
-  input[type="radio"].level-#{$i}:checked ~ * > .level-#{$i} {
+  input[type="radio"]#level-#{$i}:checked ~ .level-#{$i},
+  input[type="radio"]#level-#{$i}:checked ~ * > .level-#{$i} {
     display: block;
   }
 }
