@@ -115,6 +115,43 @@ nav#TableOfContents li {
   max-width: 100%;
 }
 
+/* Resume */
+
+.experience {
+  margin-top: $padding-16*2;
+}
+
+.experience .company {
+  display:flex;
+  align-items:left;
+  justify-content: baseline;
+}
+
+.experience .company h3 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: $padding-8;
+}
+
+.experience .role {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+@media (max-width: $mobile-breakpoint / 1.5) {
+  .experience .role {
+    flex-direction: column;
+  }
+  .experience .role .date {
+    font-weight: normal;
+    font-size: smaller;
+  }
+}
+
 /* Special Elements */
 
 textarea.numbered {
@@ -155,8 +192,4 @@ textarea.numbered {
     width: 100%;
     display: table;
   }
-}
-
-.experience {
-  margin-top: $padding-16*2;
 }
