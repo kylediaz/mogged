@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 article {
   line-height: 1.6;
@@ -6,6 +6,30 @@ article {
   // remove padding at the beginning of page
   > :first-child {
     margin-top: 0;
+  }
+
+  /* TOC */
+
+  nav#TableOfContents li {
+    margin-left: 0;
+    list-style-type: none;
+    :visited {
+      color: $color-link;
+    }
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    nav#TableOfContents {
+      font-size: small;
+      position: fixed;
+      top: 0;
+      right: 50%;
+      margin-right: $toc-width;
+      padding-right: $padding-16;
+      width: $toc-width;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
   }
 
   h1,
@@ -183,12 +207,37 @@ article {
 
   figure {
     margin: $padding-16 0;
-    figcaption p {
+    width: 100%;
+    position: relative;
+    figcaption {
       margin-top: 0;
+      font-size: 0.9em;
+      line-height: 1.25em;
+      hyphens: auto;
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    figcaption {
+      text-align: left;
+      position: absolute;
+      top: 0px;
+      left: 100%;
+      padding-left: 20px;
+      width: $menu-width;
     }
   }
 }
 
 // Override code theme with SCSS vars
-.bg { background-color: $gray-100; }
-.chroma { background-color: $gray-100; }
+.bg {
+  background-color: $gray-100;
+}
+.chroma {
+  background-color: $gray-100;
+}

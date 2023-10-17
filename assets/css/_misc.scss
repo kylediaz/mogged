@@ -87,13 +87,6 @@ header nav a:first-child:hover {
   background-color: transparent;
 }
 
-/* TOC */
-
-nav#TableOfContents li {
-  margin-left: 0;
-  list-style-type: none;
-}
-
 /* Grid Showcase */
 
 .item-grid {
@@ -104,7 +97,7 @@ nav#TableOfContents li {
 
 .showcase-item {
   box-sizing: border-box;
-  width: $container-max-width / 6;
+  width: 12rem;
   max-width: 100%;
 }
 

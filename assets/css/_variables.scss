@@ -13,13 +13,13 @@ $border-radius: $padding-4 !default;
 $body-font-weight: normal !default;
 
 $body-min-width: 20rem !default;
-$container-max-width: 80rem !default;
+$container-max-width: 40rem !default;
 
 $header-height: 3.5rem !default;
 $menu-width: 16rem !default;
-$toc-width: 16rem !default;
+$toc-width: 20rem !default;
 
-$mobile-breakpoint: $menu-width + $body-min-width * 1.2 + $toc-width !default;
+$mobile-breakpoint: $menu-width + $container-max-width * 1.2 + $toc-width !default;
 
 $hint-colors: (
   info: #6bf,
