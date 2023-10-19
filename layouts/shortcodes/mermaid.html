@@ -1,0 +1,11 @@
+{{ if not (.Page.Scratch.Get "mermaid") }}
+<script src="{{ "https://cdn.jsdelivr.net/npm/mermaid@10.5.0/dist/mermaid.min.js" | relURL }}"></script>
+{{ with resources.Get "mermaid.json" }}
+  <script>mermaid.initialize({{ .Content | safeJS }})</script>
+{{ end }}
+{{ .Page.Scratch.Set "mermaid" true }}
+{{ end }}
+
+<p class="mermaid{{ with .Get "class" }} {{ . }}{{ end }}">
+  {{- .Inner -}}
+</p>

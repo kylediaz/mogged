@@ -1,0 +1,16 @@
+{{ $key := "sidenote index" }}
+
+{{- if not (.Page.Scratch.Get $key) -}}
+{{ .Page.Scratch.Set $key 1 }}
+{{- end -}}
+
+{{- if not (.Page.Scratch.Get "sidenotes") -}}
+{{ .Page.Scratch.Set "sidenotes" slice }}
+{{- end -}}
+{{ .Page.Scratch.Set "sidenotes" (.Page.Scratch.Get "sidenotes" | append .Inner )}}
+
+
+{{ $index := .Page.Scratch.Get $key}}
+<sup style="position: relative;">{{ $index }}<span class="sidenote"><strong>{{ $index }}.</strong> {{ .Inner | markdownify }}</span></sup>
+
+{{ .Page.Scratch.Set $key (add (.Page.Scratch.Get $key) 1) }}

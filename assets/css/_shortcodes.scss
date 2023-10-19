@@ -1,85 +1,4 @@
-@import "variables";
-
-
-/* Asides */
-
-.Aside--left {
-  width: 400px;
-  margin: 10px 40px 10px -240px;
-  float: left;
-}
-
-.Aside--right {
-  width: 160px;
-  margin: 10px 0 10px 40px;
-  float: right;
-}
-
-.Aside-media {
-  width: 400px;
-  max-width: none;
-}
-
-.Caption--aside {
-  width: 400px;
-}
-
-.Caption {
-  margin-bottom: 0;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  border-bottom: 1px solid var(--color-grey3);
-  color: #767676;
-  color: var(--color-typo3);
-  font-size: 13px;
-}
-
-.Caption--aside {
-  width: 400px;
-}
-
-.Slideshow {
-  width: calc(100% + 240px);
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.Slideshow iframe,
-.Slideshow img {
-  max-width: 100%;
-}
-
-.Slideshow--right {
-  float: right;
-}
-
-@media (max-width: 1040px) {
-  .Aside-media {
-    width: 100%;
-  }
-  .Caption--aside {
-    width: 100%;
-  }
-  .Aside--left,
-  .Aside--right {
-    width: 560px;
-    width: var(--size-s);
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 0;
-    float: none;
-  }
-  .Slideshow {
-    width: 100%;
-  }
-}
-
-@media (max-width: 560px) {
-  .Aside--left,
-  .Aside--right {
-    width: 100%;
-  }
-}
+@import 'variables';
 
 /* button */
 a.button {
@@ -94,6 +13,24 @@ a.button {
 }
 a.button:hover {
   text-decoration: none;
+}
+
+/* sitenote */
+
+.sidenote {
+  margin-top: 0;
+  font-size: 0.9rem;
+  line-height: 1.25em;
+  hyphens: auto;
+
+  width: $menu-width;
+  float: right;
+  clear: right;
+  top: -3em;
+  margin-right: -$menu-width;
+  width: $menu-width;
+  padding-left: $padding-16;
+  padding-bottom: $padding-8;
 }
 
 /* hint */
@@ -131,15 +68,15 @@ a.button:hover {
   padding: $padding-16;
   display: none;
 }
-.book-tabs input[type="radio"]:checked + label {
+.book-tabs input[type='radio']:checked + label {
   border-bottom: $padding-1 solid $color-link;
 }
-.book-tabs input[type="radio"]:checked + label + .book-tabs-content {
+.book-tabs input[type='radio']:checked + label + .book-tabs-content {
   display: block;
 }
-.book-tabs input[type="radio"]:focus + label {
+.book-tabs input[type='radio']:focus + label {
   border: $padding-1 solid $color-link;
-  padding: ($padding-8 - 1rem / 32) ($padding-16 - 1rem / 16); // To account for change in border 
+  padding: ($padding-8 - 1rem / 32) ($padding-16 - 1rem / 16); // To account for change in border
 }
 
 /* about */
@@ -197,14 +134,14 @@ $max-levels: 5;
 
 @for $i from 1 to $max-levels {
   @for $j from 1 to $max-levels {
-    input[type="radio"]#level-#{$i} ~ .level-#{$j},
-    input[type="radio"]#level-#{$i} ~ * > .level-#{$j} {
+    input[type='radio']#level-#{$i} ~ .level-#{$j},
+    input[type='radio']#level-#{$i} ~ * > .level-#{$j} {
       display: none;
     }
   }
 
-  input[type="radio"]#level-#{$i}:checked ~ .level-#{$i},
-  input[type="radio"]#level-#{$i}:checked ~ * > .level-#{$i} {
+  input[type='radio']#level-#{$i}:checked ~ .level-#{$i},
+  input[type='radio']#level-#{$i}:checked ~ * > .level-#{$i} {
     display: block;
   }
 }
