@@ -34,6 +34,7 @@ a.button:hover {
 }
 
 /* hint */
+
 .book-hint.none {
   border-color: $gray-200;
   background-color: $gray-100;
@@ -144,4 +145,17 @@ $max-levels: 5;
   input[type='radio']#level-#{$i}:checked ~ * > .level-#{$i} {
     display: block;
   }
+}
+
+// Monaco Editor
+
+.monaco-editor {
+  min-height: 200px;
+  width: 100%;
+}
+
+// Mermaid.js
+
+.mermaid {
+  text-align: center;
 }

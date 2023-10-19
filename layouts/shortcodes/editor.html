@@ -1,0 +1,28 @@
+{{ $editorId := .Get 0}}
+
+<div id="{{ $editorId }}" class="monaco-editor"></div>
+
+{{ if not (.Page.Scratch.Get "monaco") }}
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.22.3/min/vs/loader.js"></script>
+{{ .Page.Scratch.Set "monaco" true }}
+{{ end }}
+
+<script>
+  require.config({
+    paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.22.3/min/vs' },
+  })
+  require(['vs/editor/editor.main'], function () {
+    if (window.monacoEditors == null) {
+        window.monacoEditors = {};
+    }
+
+    let editorId = '{{ $editorId }}';
+    window.monacoEditors[editorId] = monaco.editor.create(document.getElementById(editorId), {
+      value: '{{ .Inner }}',
+      {{ with .Get 1 }}
+      language: '{{ . }}',
+      {{ end }}
+      minimap: { enabled: false },
+    })
+  })
+</script>
