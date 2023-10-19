@@ -1,4 +1,11 @@
+{{ $key := "figure index" }}
+{{- if not (.Page.Scratch.Get $key) -}}
+{{ .Page.Scratch.Set $key 1 }}
+{{- end -}}
+
 <figure>
   {{ .Inner }}
-  <figcaption><strong>Figure</strong> {{ .Get 0 | markdownify }}</figcaption>
+  <figcaption><strong>Figure {{ .Page.Scratch.Get $key }}</strong> {{ .Get 0 | markdownify }}</figcaption>
 </figure>
+
+{{ .Page.Scratch.Set $key (add (.Page.Scratch.Get $key) 1) }}
