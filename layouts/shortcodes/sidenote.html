@@ -11,6 +11,8 @@
 
 
 {{ $index := .Page.Scratch.Get $key}}
-<sup style="position: relative;">{{ $index }}<span class="sidenote"><strong>{{ $index }}.</strong> {{ .Inner | markdownify }}</span></sup>
+<label for="sidenote-checkbox-{{$index}}" class="sidenote-label">{{ .Get 0 }} <sup>{{ $index }}</sup></label>
+<input type="checkbox" class="sidenote-checkbox" id="sidenote-checkbox-{{$index}}">
+<span class="sidenote"><strong>{{ $index }}.</strong> {{ .Inner | markdownify }}</span>
 
 {{ .Page.Scratch.Set $key (add (.Page.Scratch.Get $key) 1) }}
