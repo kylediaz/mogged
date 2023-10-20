@@ -4,7 +4,7 @@
 {{- end -}}
 
 <figure>
-  {{ .Inner }}
+  {{ .Inner | markdownify }}
   <figcaption><strong>Figure {{ .Page.Scratch.Get $key }}</strong> {{ .Get 0 | markdownify }}</figcaption>
 </figure>
 
