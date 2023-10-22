@@ -1,11 +1,12 @@
 {{ $editorId := .Get 0}}
 
-<div id="{{ $editorId }}" class="monaco-editor"></div>
+<div class="code-editor-container">
+  <div id="{{ $editorId }}" class="monaco-editor"></div>
+</div>
 
 {{ if not (.Page.Scratch.Get "monaco") }}
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.22.3/min/vs/loader.js"></script>
-{{ .Page.Scratch.Set "monaco" true }}
-{{ end }}
+{{ .Page.Scratch.Set "monaco" true }} {{ end }}
 
 <script>
   require.config({

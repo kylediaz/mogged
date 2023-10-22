@@ -3,6 +3,11 @@
 article {
   line-height: 1.6;
 
+  .post-title {
+    font-size: 3rem;
+    line-height: 1.04;
+  }
+
   // remove padding at the beginning of page
   > :first-child {
     margin-top: 0;
@@ -13,6 +18,7 @@ article {
   nav#TableOfContents li {
     margin-left: 0;
     list-style-type: none;
+    line-height: 1.75;
     :visited {
       color: $color-link;
     }
@@ -22,7 +28,7 @@ article {
     nav#TableOfContents {
       font-size: small;
       position: fixed;
-      top: 0;
+      top: $padding-16;
       right: 50%;
       margin-right: $toc-width;
       padding-right: $padding-16;
@@ -38,8 +44,7 @@ article {
   h4,
   h5,
   h6 {
-    font-weight: normal;
-    line-height: 1;
+    line-height: 1.04;
     margin-top: 1.5em;
     margin-bottom: $padding-16;
 
@@ -54,6 +59,14 @@ article {
     a.anchor:focus {
       opacity: initial;
     }
+  }
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
   }
 
   h4,
@@ -123,11 +136,10 @@ article {
   }
 
   blockquote {
-    margin: $padding-16 0;
-    padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
+    margin: $padding-16;
+    padding: $padding-16 $padding-16 $padding-16 ($padding-16 - $padding-4); //to keep total left space 16dp
 
     border-inline-start: $padding-4 solid $gray-200;
-    border-radius: $border-radius;
 
     :first-child {
       margin-top: 0;

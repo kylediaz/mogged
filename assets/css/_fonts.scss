@@ -1,7 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-feature-settings: 'liga', 'tnum', 'case', 'calt', 'zero', 'ss01', 'locl';
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+
+  font-family: 'Montserrat', sans-serif;
 }
 
-code > *, pre > * {
-    font-family: 'Cascadia Code', monospace;
+nav#TableOfContents li,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Poppins', serif;
+}
+
+code > *,
+pre > * {
+  font-family: 'Cascadia Code', monospace;
 }
