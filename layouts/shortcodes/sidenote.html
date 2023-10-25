@@ -4,12 +4,6 @@
 {{ .Page.Scratch.Set $key 1 }}
 {{- end -}}
 
-{{- if not (.Page.Scratch.Get "sidenotes") -}}
-{{ .Page.Scratch.Set "sidenotes" slice }}
-{{- end -}}
-{{ .Page.Scratch.Set "sidenotes" (.Page.Scratch.Get "sidenotes" | append .Inner )}}
-
-
 {{ $index := .Page.Scratch.Get $key}}
 <label for="sidenote-checkbox-{{$index}}" class="sidenote-label">{{ .Get 0 }} <sup>{{ $index }}</sup></label>
 <input type="checkbox" class="sidenote-checkbox" id="sidenote-checkbox-{{$index}}">

@@ -151,7 +151,7 @@ a.button:hover {
   margin-bottom: auto;
 }
 
-@media (max-width: $mobile-breakpoint) {
+@media (max-width: $container-max-width) {
   .about-container {
     flex-direction: column;
   }
@@ -205,4 +205,10 @@ $max-levels: 5;
 
 .mermaid {
   text-align: center;
+}
+
+// Mathjax
+
+mjx-container {
+  overflow-x: scroll;
 }
