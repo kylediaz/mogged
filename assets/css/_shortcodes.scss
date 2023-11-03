@@ -210,5 +210,6 @@ $max-levels: 5;
 // Mathjax
 
 mjx-container {
+  overflow-y: visible;
   overflow-x: scroll;
 }
