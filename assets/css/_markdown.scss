@@ -36,6 +36,10 @@ article {
       max-height: 100vh;
       overflow-y: auto;
     }
+
+    nav#TableOfContents li.active > a{
+      font-weight: bold;
+    }
   }
 
   h1,
@@ -66,7 +70,7 @@ article {
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   h4,
