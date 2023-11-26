@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id')
+      console.log(id)
       if (entry.intersectionRatio > 0) {
         document
           .querySelector(`nav li a[href="#${id}"]`)
@@ -15,10 +16,10 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 
   // Track all sections that have an `id` applied
-  document.querySelectorAll('h2[id]').forEach(section => {
+  document.querySelectorAll('.content > h2[id]').forEach(section => {
     observer.observe(section)
   })
-  document.querySelectorAll('h3[id]').forEach(section => {
+  document.querySelectorAll('.content > h3[id]').forEach(section => {
     observer.observe(section)
   })
 })
