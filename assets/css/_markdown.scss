@@ -30,7 +30,7 @@ article {
       position: fixed;
       top: $padding-16;
       right: 50%;
-      margin-right: $toc-width;
+      margin-right: $container-max-width / 2;
       padding-right: $padding-16;
       width: $toc-width;
       max-height: 100vh;
