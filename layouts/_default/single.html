@@ -16,6 +16,9 @@
     <article class="post h-entry">
         <header>
             <h1 class="p-name post-title{{ if .Params.favorite }} favorite{{end}}{{ if .Params.draft }} draft{{end}}">{{ trim .Title  " " | markdownify }}</h1>
+            <br>
+            
+            <span style="font-weight:light; font-size: smaller; color: #030303">{{ $.Date.Format "Jan 2, 2006" }}</span>
         </header>
         <div class="content e-content">
             {{ .Content }}
