@@ -1,5 +1,8 @@
+<div class="switch">
 {{ range $i, $v := .Params }}
     {{ $i := add $i 1 }}
     <input type="radio" name="content_length" id="level-{{ $i }}" {{ if eq $i 2}}checked{{ end }}>
     <label for="level-{{ $i }}">{{ $v }}</label><br>
 {{ end }}
+<div class="switch__indicator" /></div>
+</div>

@@ -13,35 +13,6 @@ article {
     margin-top: 0;
   }
 
-  /* TOC */
-
-  nav#TableOfContents li {
-    margin-left: 0;
-    list-style-type: none;
-    line-height: 1.75;
-    :visited {
-      color: $color-link;
-    }
-  }
-
-  @media (min-width: $mobile-breakpoint) {
-    nav#TableOfContents {
-      font-size: small;
-      position: fixed;
-      top: $padding-16;
-      right: 50%;
-      margin-right: $container-max-width / 2;
-      padding-right: $padding-16;
-      width: $toc-width;
-      max-height: 100vh;
-      overflow-y: auto;
-    }
-
-    nav#TableOfContents li.active > a{
-      font-weight: bold;
-    }
-  }
-
   h1,
   h2,
   h3,
@@ -99,6 +70,7 @@ article {
     &:hover {
       text-decoration: underline;
     }
+
     &:visited {
       color: $color-visited-link;
     }
@@ -137,17 +109,26 @@ article {
 
   p {
     word-wrap: break-word;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
   }
 
   blockquote {
     margin: $padding-16;
-    padding: $padding-16 $padding-16 $padding-16 ($padding-16 - $padding-4); //to keep total left space 16dp
+    padding: $padding-16 $padding-16 $padding-16 (
+      $padding-16 - $padding-4
+    ); //to keep total left space 16dp
+
+    font-size: $font-size-base;
+    line-height: 1.2rem;
 
     border-inline-start: $padding-4 solid $gray-200;
 
     :first-child {
       margin-top: 0;
     }
+
     :last-child {
       margin-bottom: 0;
     }
@@ -196,12 +177,63 @@ article {
     }
   }
 
+  /* TOC */
+
+  .toc {
+    .title {
+      display: none;
+      color: #757575;
+    }
+
+    li {
+      margin-left: 0;
+      list-style-type: none;
+      line-height: 1.75;
+
+      a {
+        color: #757575;
+
+        :visited {
+          color: #757575;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    .toc {
+      .title {
+        font-family: 'Poppins', serif;
+        display: block;
+      }
+
+      ul {
+        padding-inline-start: 1rem;
+      }
+
+      font-size: small;
+      position: fixed;
+      top: $padding-16;
+      right: 50%;
+      margin-right: $container-max-width / 2;
+      padding-right: $padding-16;
+      width: $toc-width;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .toc li.active>a {
+      font-weight: bold;
+    }
+  }
+
   // Special case for highlighted code with line numbers
   .highlight table tr {
     td:nth-child(1) pre {
       margin: 0;
       padding-inline-end: 0;
     }
+
     td:nth-child(2) pre {
       margin: 0;
       padding-inline-start: 0;
@@ -229,6 +261,7 @@ article {
     margin: $padding-16 0;
     width: 100%;
     position: relative;
+
     figcaption {
       margin-top: 0;
       font-size: 0.9em;
@@ -236,6 +269,7 @@ article {
       hyphens: auto;
     }
   }
+
   @media (max-width: $mobile-breakpoint) {
     figcaption {
       text-align: center;
@@ -258,6 +292,7 @@ article {
 .bg {
   background-color: $gray-100;
 }
+
 .chroma {
   background-color: $gray-100;
 }

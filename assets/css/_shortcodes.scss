@@ -15,54 +15,6 @@ a.button:hover {
   text-decoration: none;
 }
 
-/* sitenote */
-
-.sidenote-checkbox {
-  display: none;
-}
-
-.sidenote {
-  margin-top: 0;
-  font-size: 0.9rem;
-  line-height: 1.25em;
-  hyphens: auto;
-
-  float: right;
-  clear: right;
-  top: -3em;
-  margin-right: -$menu-width;
-  width: $menu-width;
-  padding-left: $padding-16;
-  padding-top: $padding-8;
-  padding-bottom: $padding-8;
-
-  .sidenote-content {
-    font-weight: 400;
-    letter-spacing: .33px;
-  }
-}
-
-@media (max-width: $mobile-breakpoint) {
-  .sidenote-label {
-    cursor: pointer;
-    text-decoration: underline dashed;
-  }
-  .sidenote {
-    display: block;
-    float: left;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
- .sidenote-checkbox:not(:checked) + .sidenote {
-  display: none;
- }   
-}
-
-.sidenote-label:hover + * + .sidenote {
-  text-decoration: underline;
-}
-
 /* hint */
 
 .book-hint.none {
