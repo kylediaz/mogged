@@ -3,6 +3,8 @@
 body {
   font-feature-settings: 'liga', 'tnum', 'case', 'calt', 'zero', 'ss01', 'locl';
   text-rendering: optimizelegibility;
+  font-kerning: auto;
+  font-variant-ligatures: no-common-ligatures;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;

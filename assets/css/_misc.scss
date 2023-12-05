@@ -80,6 +80,12 @@ header nav a:first-child {
   border-top-color: transparent;
 }
 
+@media print {
+  header nav {
+    display: none;
+  }
+}
+
 /* Grid Showcase */
 
 .item-grid {
