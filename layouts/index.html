@@ -5,7 +5,8 @@
     {{ block "head" . }}
     {{ partial "head.html" . }}
     {{ end }}
-    {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/landing.scss") }}
+    {{- $styles := resources.Get "css/landing.scss" | resources.ExecuteAsTemplate "css/entry.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 </head>
 
 <body>
