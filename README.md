@@ -21,3 +21,8 @@ And then change your theme to "mogged" in your Hugo config file
 ```toml
 theme = "mogged"
 ```
+
+## Credit
+
+* Thank you [Hrvoje](https://dribbble.com/shots/1898450-LA-landing-page) for design inspiration
+* Thank you [Brittany](https://brittanychiang.com/) for the projects component

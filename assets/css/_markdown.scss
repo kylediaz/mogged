@@ -67,16 +67,16 @@ article {
   a {
     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
-
     &:visited {
       color: $color-visited-link;
     }
 
     &.footnote-ref {
-      color: $color-link;
+      color: $body-font-color;
+      margin-right: .2rem;
+      + .footnote-ref::before {
+        content: ',';
+      }
     }
   }
 

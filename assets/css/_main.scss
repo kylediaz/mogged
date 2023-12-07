@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  margin: 0;
   min-width: $body-min-width;
   color: $body-font-color;
   background: $body-background;
@@ -28,6 +29,11 @@ body * {
   max-width: $container-max-width;
   margin: 0 auto;
   margin-bottom: 5rem;
+}
+
+main {
+  margin-top: 10rem;
+  margin-bottom: 20rem;
 }
 
 @media (max-width: $mobile-breakpoint) {
@@ -58,16 +64,20 @@ h5 {
 /* <a> */
 
 a {
-  color: $color-link;
+  color: $body-font-color;
   transition: color 0.2s;
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  transition-property: background;
+  transition-duration: 0.2s;
 }
 
 a:active,
 a:hover {
   outline: 0;
-  opacity: 0.7;
+  transition-property: background;
+  transition-duration: 0.2s;
+  background-color: $color-link;
 }
 
 a svg {
@@ -77,4 +87,81 @@ a svg {
 img,
 svg {
   vertical-align: middle;
+}
+
+main {
+  .wide {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media screen and (min-width: calc(797px)) {
+  .wide {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+@media screen and (min-width: calc(797px)) and (max-width: calc(1106px)) {
+  .wide.extra-wide,
+  .wide.full-width {
+    width: calc(100vw - 2 * var(--line-height));
+  }
+}
+
+@media screen and (min-width: calc(1365px)) {
+  .wide.extra-wide {
+    margin-left: calc((1 - 1.5) / 2 * 100%);
+    width: calc(1.5 * 100%);
+  }
+
+  .wide {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+header.common-header {
+  height: 0;
+  padding: 0;
+}
+
+header.common-header nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin-top: .5em;
+  margin-right: .5em;
+
+  display: flex;
+  align-items: stretch;
+
+  justify-content: space-between;
+  gap: $padding-16;
+
+  a {
+    font-size: 0.8rem;
+    font-weight: 100;
+    letter-spacing: .25em;
+    text-align: right;
+
+    transition-property: color;
+    transition-duration: 0.2s;
+  }
+
+  a:hover {
+    color: red;
+    background: transparent;
+
+    transition-property: color;
+    transition-duration: 0.2s;
+  }
+}
+
+@media print {
+  header.common-header {
+    display: none;
+  }
 }

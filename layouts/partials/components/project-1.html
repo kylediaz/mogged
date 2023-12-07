@@ -1,0 +1,29 @@
+<div class="hl-project">
+  <div class="project-image">
+      <a href="{{ .RelPermalink }}" class="project-img-link">
+          <!-- before -->
+          <div class="p-image-wrapper">
+              <div class="p-image-wrapper--inner">
+                {{ with .Params.image }}
+                <img src="{{ . }}" />
+                {{ end }}
+              </div>
+          </div>
+      </a>
+  </div>
+  <div class="project-content">
+      <p class="project-overline">Featured Project</p>
+      <h3 class="hl-project-name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <div class="project-description">
+          <p>{{ .Description }}</p>
+      </div>
+      <!--
+      <ul class="project-tech-list">
+          <li>React</li>
+          <li>Material UI</li>
+          <li>Redux</li>
+          <li>Firebase</li>
+      </ul>
+      -->
+  </div>
+</div>

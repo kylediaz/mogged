@@ -1,5 +1,48 @@
-{{ define "main" }}
-    <div class="homepage-content">
-        {{ .Content }}
+<!DOCTYPE html>
+<html lang="{{ .Site.Params.locale | default .Site.LanguageCode }}">
+
+<head>
+    {{ block "head" . }}
+    {{ partial "head.html" . }}
+    {{ end }}
+    {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/landing.scss") }}
+</head>
+
+<body>
+    <a class="skip-main" href="#main">{{ i18n "skipToContent" }}</a>
+    <header class="common-header">
+        {{ block "header" . }}
+        {{ partial "header.html" . }}
+        {{ end }}
+    </header>
+    <section class="hero">
+        <section class="left">
+            <div class="hero-img">
+                <img src="/images/hero.png">
+                <div class="dots">
+                    <div>•</div>
+                    <div>•</div>
+                    <div>∘</div>
+                </div>
+            </div>
+            <div class="bg">
+                <div class="bg-accent"></div>
+            </div>
+            <div class="tagline">
+                <h1>Kyle&nbsp;Diaz</h1>
+                <h2>Software&nbsp;Engineer</h2>
+            </div>
+            <!-- <div class="sideways">Portfolio Website</div> -->
+        </section>
+    </section>
+    <div class="container">
+        <main id="main" tabindex="-1">
+            {{ .Content }}
+        </main>
+        {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+        {{ end }}
     </div>
-{{ end }}
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html::after,
+html::before {
+    content: "";
+    will-change: top left;
+    backface-visibility: hidden;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background: #fff;
+    z-index: 21000;
+}
+
+html::before {
+    left: 0;
+}
+
+html::after {
+    right: 0;
+}
+
+
+body::after,
+body::before {
+    content: "";
+    will-change: top left;
+    backface-visibility: hidden;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: $page-border-width;
+    background: #fff;
+    z-index: 20000;
+}
+
+body::before {
+    top: 0;
+}
+
+body::after {
+    bottom: 0;
+}
+
+body {
+    margin: 0;
+}
+
+@media (max-width: 840px) {
+    .border-wrapper {
+        border-left: $page-border-width / 2 solid #fff;
+        border-right: $page-border-width / 2 solid #fff;
+    }
+
+    body::after,
+    body::before {
+        height: $page-border-width / 2;
+    }
+}
