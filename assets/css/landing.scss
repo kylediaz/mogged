@@ -12,8 +12,6 @@ section {
 section.hero {
     height: 100vh;
     width: 100%;
-    z-index: -1;
-
     background: rgb(243, 243, 243);
     background: linear-gradient(180deg, rgba(243, 243, 243, 1) 0%, rgba(255, 255, 255, 1) 93%, rgba(255, 255, 255, 1) 100%);
     cursor: default;
@@ -197,4 +195,8 @@ main section {
     main section.tagline {
         font-size: 1.7em;
     }
+}
+
+.common-header nav {
+    z-index: 10;
 }
